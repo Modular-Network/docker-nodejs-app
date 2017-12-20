@@ -12,5 +12,3 @@ ADD ./app .
 RUN cd services/sockets && \
     npm install && \
     npm set progress=false
-
-CMD ["npm", "start"]
