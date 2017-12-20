@@ -11,7 +11,4 @@ RUN npm install && \
 
 # Add project to app directory
 ADD . .
-
-EXPOSE 4000 4001
-
 CMD ["npm", "start"]
