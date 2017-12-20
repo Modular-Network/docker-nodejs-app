@@ -3,9 +3,10 @@ MAINTAINER Marcio Rabelo <marcio@modular.network>
 
 # Create workdir
 WORKDIR "/app"
+VOLUME "/app"
 
 # Add project to app directory
-ADD . .
+ADD ./app .
 
 # Build process
 RUN cd services/sockets && \
