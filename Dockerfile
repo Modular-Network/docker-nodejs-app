@@ -1,14 +1,15 @@
-FROM node:6.12.0
+FROM node:alpine
+
 MAINTAINER Marcio Rabelo <marcio@modular.network>
 
-# Create workdir
-WORKDIR "/app"
-VOLUME "/app"
+RUN mkdir -p /usr/src/app
 
-# Add project to app directory
-ADD ./app .
+WORKDIR /usr/src/app
 
-# Build process
-RUN cd services/sockets && \
-    npm install && \
-    npm set progress=false
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
